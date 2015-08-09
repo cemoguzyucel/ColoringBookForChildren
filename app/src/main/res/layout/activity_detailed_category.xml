@@ -7,10 +7,8 @@
     tools:context="com.wish.coloringbookforchildren.activities.DetailedCategoryActivity">
 
 
-    <Button
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/start_coloring"
-        android:id="@+id/button_start_coloring"
-        android:layout_centerInParent="true" />
+        android:id="@+id/detailed_category_imageListView" />
 </RelativeLayout>

@@ -17,6 +17,7 @@ import com.wish.coloringbookforchildren.customviews.ThumbnailView;
 import com.wish.coloringbookforchildren.models.Category;
 import com.wish.coloringbookforchildren.models.ColoringImage;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -86,6 +87,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Intent myIntent = new Intent(MainActivity.this, DetailedCategoryActivity.class);
+                Bundle mBundle = new Bundle();
+                mBundle.putSerializable("coloringImage", (Serializable) coloringImages);
+                myIntent.putExtras(mBundle);
                 MainActivity.this.startActivity(myIntent);
 
 
@@ -140,8 +144,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+/*
         categories.add(animals);
-        categories.add(fruits);
+*/
+/*        categories.add(fruits); */
+        categories.add(technology);
 /*        categories.add(superheroes);
         categories.add(sport);
         categories.add(flags);
@@ -150,7 +157,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         categories.add(planes);
         categories.add(houses);
         categories.add(cartoon);
-        categories.add(technology);
         categories.add(science_fiction);*/
 
         //categories should be sorted according to element.getCategoryName
@@ -164,14 +170,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         List<ColoringImage> coloringImages = new ArrayList<ColoringImage>();
 
-        ColoringImage imageExample1 = new ColoringImage(animals,"wolf",R.drawable.icon_small1,null);
-        ColoringImage imageExample2 = new ColoringImage(animals,"clown",R.drawable.icon_small2,null);
-        ColoringImage imageExample3 = new ColoringImage(animals,"penguin",R.drawable.icon_small3,null);
-        ColoringImage imageExample4 = new ColoringImage(animals,"turtle",R.drawable.icon_small4,null);
-        ColoringImage imageExample5 = new ColoringImage(fruits,"penguin1",R.drawable.penguin_small,null);
-        ColoringImage imageExample6 = new ColoringImage(fruits,"penguin2",R.drawable.penguin_small,null);
-        ColoringImage imageExample7 = new ColoringImage(fruits,"penguin3",R.drawable.icon_small5,null);
-        ColoringImage imageExample8 = new ColoringImage(fruits,"penguin4",R.drawable.folder_icon,null);
+        ColoringImage imageExample1 = new ColoringImage(technology,"technology_001",R.drawable.technology_001,null);
+        ColoringImage imageExample2 = new ColoringImage(technology,"technology_002",R.drawable.technology_002,null);
+        ColoringImage imageExample3 = new ColoringImage(technology,"technology_003",R.drawable.technology_003,null);
+        ColoringImage imageExample4 = new ColoringImage(technology,"technology_004",R.drawable.technology_004,null);
+        ColoringImage imageExample5 = new ColoringImage(technology,"technology_005",R.drawable.technology_005,null);
+        ColoringImage imageExample6 = new ColoringImage(technology,"technology_006",R.drawable.technology_006, null);
 
         coloringImages.add(imageExample1);
         coloringImages.add(imageExample2);
@@ -179,8 +183,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         coloringImages.add(imageExample4);
         coloringImages.add(imageExample5);
         coloringImages.add(imageExample6);
-        coloringImages.add(imageExample7);
-        coloringImages.add(imageExample8);
         return coloringImages;
     }
 

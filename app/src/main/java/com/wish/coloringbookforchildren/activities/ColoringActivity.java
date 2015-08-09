@@ -97,7 +97,7 @@ public class ColoringActivity extends AppCompatActivity implements View.OnTouchL
             BitmapFactory.Options options = new BitmapFactory.Options();
             options.inScaled = false;
             mBitmap = BitmapFactory.decodeResource(getResources(),
-                    R.drawable.family,options).copy(Bitmap.Config.ARGB_8888, true);
+                    R.drawable.technology_003,options).copy(Bitmap.Config.ARGB_8888, true);
 
             this.path = new Path();
         }

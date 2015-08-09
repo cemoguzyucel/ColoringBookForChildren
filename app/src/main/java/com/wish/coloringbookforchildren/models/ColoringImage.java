@@ -2,10 +2,12 @@ package com.wish.coloringbookforchildren.models;
 
 import android.widget.ImageView;
 
+import java.io.Serializable;
+
 /**
  * Created by cemoguzyucel on 20/07/15.
  */
-public class ColoringImage {
+public class ColoringImage implements Serializable {
 
     //variables
     Category category;

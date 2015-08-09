@@ -7,26 +7,50 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.ListView;
 
 import com.wish.coloringbookforchildren.R;
+import com.wish.coloringbookforchildren.customviews.DetailedCategoryView;
+import com.wish.coloringbookforchildren.customviews.ThumbnailView;
+import com.wish.coloringbookforchildren.models.ColoringImage;
+
+import java.util.List;
 
 public class DetailedCategoryActivity extends AppCompatActivity implements View.OnClickListener {
 
     //variables
-    Button startColoringButton;
+    ListView detailedCategoryImageListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_category);
 
-        //obtain views
-        startColoringButton = (Button) findViewById(R.id.button_start_coloring);
+
+        Intent intent=this.getIntent();
+        Bundle bundle=intent.getExtras();
+
+        List<ColoringImage> thumbs=
+                (List<ColoringImage>)bundle.getSerializable("coloringImage");
+        DetailedCategoryView adapter = new DetailedCategoryView(DetailedCategoryActivity.this,thumbs);
+
+        detailedCategoryImageListView=(ListView)findViewById(R.id.detailed_category_imageListView);
+        detailedCategoryImageListView.setAdapter(adapter);
+        detailedCategoryImageListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent myIntent = new Intent(DetailedCategoryActivity.this, ColoringActivity.class);
+                DetailedCategoryActivity.this.startActivity(myIntent);
 
 
-        //set OnClicks for views
-        startColoringButton.setOnClickListener(this);
+                //todo
+            }
+        });
     }
 
     @Override
@@ -53,16 +77,6 @@ public class DetailedCategoryActivity extends AppCompatActivity implements View.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_start_coloring:
-                Intent myIntent = new Intent(DetailedCategoryActivity.this, ColoringActivity.class);
-/*
-                myIntent.putExtra("key", value); //Optional parameters
-*/
-                DetailedCategoryActivity.this.startActivity(myIntent);
-                break;
 
-
-        }
     }
 }
