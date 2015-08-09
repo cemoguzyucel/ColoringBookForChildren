@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_group">
+
+        <ImageView
+            android:id="@+id/sample_image1"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/sample_image2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/sample_image1">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/sample_image3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/sample_image1">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/sample_image4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/sample_image2"
+            android:layout_toRightOf="@id/sample_image3">
+        </ImageView>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="9sp"
+        android:textAlignment="center"
+        android:layout_below="@+id/category_group">
+    </TextView>
+
+</RelativeLayout>

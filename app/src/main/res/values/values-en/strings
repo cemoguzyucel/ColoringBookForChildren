@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Coloring Book For Children</string>
+
+    <string name="select_category">Select Category</string>
+
+    <string name="start_coloring">Start Coloring</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="animals">animals</string>
+    <string name="fruits">fruits</string>
+    <string name="superheroes">superheroes</string>
+    <string name="sport">sport</string>
+    <string name="flags">flags</string>
+    <string name="countries">countries</string>
+    <string name="cars">cars</string>
+    <string name="planes">planes</string>
+    <string name="houses">houses</string>
+    <string name="cartoon">cartoon</string>
+    <string name="technology">technology</string>
+    <string name="science_fiction">sci-fi</string>
+</resources>
