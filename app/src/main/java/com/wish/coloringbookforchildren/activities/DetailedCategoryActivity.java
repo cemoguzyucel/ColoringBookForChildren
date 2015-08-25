@@ -13,6 +13,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.wish.coloringbookforchildren.R;
+import com.wish.coloringbookforchildren.applicationdata.ApplicationDataProvider;
 import com.wish.coloringbookforchildren.customviews.DetailedCategoryView;
 import com.wish.coloringbookforchildren.customviews.ThumbnailView;
 import com.wish.coloringbookforchildren.models.ColoringImage;
@@ -28,14 +29,18 @@ public class DetailedCategoryActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_category);
+        ApplicationDataProvider.getInstance().getWorkingColoringImages();
+        ApplicationDataProvider.getInstance().getWorkingCategory();
+
 
 
         Intent intent=this.getIntent();
         Bundle bundle=intent.getExtras();
 
-        List<ColoringImage> thumbs=
-                (List<ColoringImage>)bundle.getSerializable("coloringImage");
-        DetailedCategoryView adapter = new DetailedCategoryView(DetailedCategoryActivity.this,thumbs);
+
+
+
+        DetailedCategoryView adapter = new DetailedCategoryView(DetailedCategoryActivity.this,ApplicationDataProvider.getInstance().getWorkingColoringImages());
 
         detailedCategoryImageListView=(ListView)findViewById(R.id.detailed_category_imageListView);
         detailedCategoryImageListView.setAdapter(adapter);

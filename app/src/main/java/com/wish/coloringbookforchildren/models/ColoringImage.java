@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by cemoguzyucel on 20/07/15.
  */
-public class ColoringImage implements Serializable {
+public class ColoringImage {
 
     //variables
     Category category;
