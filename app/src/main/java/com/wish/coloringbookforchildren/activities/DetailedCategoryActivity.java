@@ -31,6 +31,7 @@ public class DetailedCategoryActivity extends AppCompatActivity implements View.
         setContentView(R.layout.activity_detailed_category);
         ApplicationDataProvider.getInstance().getWorkingColoringImages();
         ApplicationDataProvider.getInstance().getWorkingCategory();
+        //hey
 
 
 
