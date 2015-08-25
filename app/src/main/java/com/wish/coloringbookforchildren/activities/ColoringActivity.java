@@ -32,6 +32,8 @@ public class ColoringActivity extends AppCompatActivity implements View.OnTouchL
     private MyView myView;
     Button red, blue, yellow;
     Paint paint;
+    /** Called when the activity is first created. */
+    /** Called when the activity is first created. */
 
     /** Called when the activity is first created. */
 /*
